@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Temporadas - Juego de Tronos</title>
+</head>
+<body>
+<h1>Temporadas</h1>
+<ul>
+    <li th:each="temporada : ${temporadas}">
+        Temporada <span th:text="${temporada.numeroTemporada}">0</span>
+        <a th:href="@{/temporada/{id}(id=${temporada.id})}">Ver Episodios</a>
+    </li>
+</ul>
+<a href="/">Volver a la página principal</a>
+</body>
+</html>

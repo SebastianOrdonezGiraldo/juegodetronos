@@ -1,0 +1,54 @@
+# Juego de Tronos - Aplicación Web
+
+## Portada del Proyecto
+
+**Nombre del Proyecto**: Juego de Tronos - Aplicación Web
+**Desarrollado por**: Sebastián Ordoñez
+**Fecha de Creación**: 1 de noviembre de 2024
+
+---
+
+## Descripción General
+
+Esta aplicación web proporciona información detallada sobre la serie "Juego de Tronos". Está desarrollada con **Java 17** y **Spring Boot** para el backend, **Thymeleaf** y **CSS** para la interfaz gráfica, y utiliza **MySQL** como base de datos, alojada en **Clever Cloud**.
+
+### Objetivos del Proyecto
+- Proporcionar datos sobre la serie "Juego de Tronos", incluyendo temporadas, episodios y personajes.
+- Integrar un sistema de calificación para los episodios.
+- Facilitar la navegación en una interfaz intuitiva.
+
+---
+
+## Instrucciones para Ejecutar la Aplicación
+
+### Requisitos Previos
+
+- **Java 17 o superior**
+- **Maven** para gestionar dependencias
+- **MySQL** para la base de datos (configurada en Clever Cloud con los datos de conexión)
+
+### Pasos de Ejecución
+
+1. **Clonar el Repositorio**:
+   ```bash
+   git clone <URL-del-repositorio>
+   cd <nombre-del-repositorio>
+ Configurar la Conexión a la Base de Datos:
+ spring.datasource.url=jdbc:mysql://<host>/<nombre_base_datos>?useSSL=false&serverTimezone=UTC
+ spring.datasource.username=<usuario_db>
+ spring.datasource.password=<contraseña_db>
+ spring.jpa.hibernate.ddl-auto=none
+
+3.Ejecutar la Aplicación:
+mvn spring-boot:run
+
+4.Abrir en el Navegador:
+Accede a http://localhost:8080 para ver la aplicación en ejecución.
+
+Mapa de Navegación de la Aplicación:
+Página	URL	Descripción
+Página Principal	/	Muestra información general de la serie, incluyendo el capítulo mejor calificado y el póster.
+Listado de Temporadas	/temporadas	Muestra las temporadas de la serie, permitiendo seleccionar capítulos específicos.
+Detalles de Episodios	/episodio/{id}	Muestra detalles del episodio seleccionado, incluyendo calificación y descripción.
+Personajes	/personajes	Muestra la lista de personajes principales de la serie con sus imágenes y descripciones.
+

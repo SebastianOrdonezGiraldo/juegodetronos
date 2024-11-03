@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Juego de Tronos - Página Principal</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+
+<!-- Encabezado con el nombre de la serie y el número de temporadas -->
+<header>
+    <h1 th:text="${serie.nombre}">Nombre de la Serie</h1>
+    <p>Número de temporadas: <span th:text="${serie.numeroTemporadas}">0</span></p>
+</header>
+
+<!-- Clasificación general de la serie -->
+<section>
+    <h2>Clasificación: <span th:text="${serie.clasificacion}">0.0</span></h2>
+</section>
+
+<!-- Imagen del póster de la serie -->
+<section>
+    <img th:src="@{/images/poster_juego_de_tronos.jpg}" alt="Póster de la Serie" style="width:300px;">
+</section>
+
+<!-- Información del capítulo mejor calificado -->
+<section>
+    <h3>Capítulo Mejor Calificado: <span th:text="${mejorCapitulo.nombre}">Nombre del Capítulo</span></h3>
+    <p>Calificación: <span th:text="${mejorCapitulo.clasificacion}">0.0</span></p>
+</section>
+
+<!-- Enlaces de navegación -->
+<nav>
+    <a th:href="@{/temporadas}">Ver Temporadas</a> | <a th:href="@{/personajes}">Ver Personajes</a>
+</nav>
+
+<!-- Pie de página con datos del estudiante y fecha de creación -->
+<footer>
+    <p>Desarrollado por: Sebastian Ordoñez</p>
+    <p>Fecha de creación: 1/11/2024</p>
+    <p>Proyecto de la serie Juego de Tronos</p>
+</footer>
+
+</body>
+</html>

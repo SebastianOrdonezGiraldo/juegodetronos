@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Detalles del Episodio - Juego de Tronos</title>
+</head>
+<body>
+<h1 th:text="${episodio.nombre}">Nombre del Episodio</h1>
+<p>Descripción: <span th:text="${episodio.descripcion}">Descripción del Episodio</span></p>
+<p>Clasificación: <span th:text="${episodio.clasificacion}">0.0</span></p>
+<img th:src="${episodio.imagen1Url}" alt="Imagen 1 del Episodio" />
+<img th:src="${episodio.imagen2Url}" alt="Imagen 2 del Episodio" />
+
+<h2>Calificar el Episodio</h2>
+<form method="post" th:action="@{/episodio/{id}/calificar(id=${episodio.id})}">
+    <input type="number" name="calificacion" min="0" max="5" step="0.1" required />
+    <button type="submit">Enviar Calificación</button>
+</form>
+
+<a href="/temporada/${episodio.temporada.id}">Volver a la Temporada</a>
+</body>
+</html>

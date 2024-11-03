@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Personajes - Juego de Tronos</title>
+</head>
+<body>
+<h1>Personajes</h1>
+<ul>
+    <li th:each="personaje : ${personajes}">
+        <span th:text="${personaje.nombre}">Nombre del Personaje</span>
+        <a th:href="@{/personaje/{id}(id=${personaje.id})}">Ver Detalles</a>
+    </li>
+</ul>
+<a href="/">Volver a la página principal</a>
+</body>
+</html>

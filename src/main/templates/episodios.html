@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Episodios - Juego de Tronos</title>
+</head>
+<body>
+<h1>Episodios de Temporada <span th:text="${temporada.numeroTemporada}">0</span></h1>
+<ul>
+    <li th:each="episodio : ${episodios}">
+        <span th:text="${episodio.nombre}">Nombre del Episodio</span>
+        <a th:href="@{/episodio/{id}(id=${episodio.id})}">Ver Detalles</a>
+    </li>
+</ul>
+<a href="/temporadas">Volver a las temporadas</a>
+</body>
+</html>
